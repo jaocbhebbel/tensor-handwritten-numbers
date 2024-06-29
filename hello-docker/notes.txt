@@ -1,0 +1,56 @@
+what is docker?
+- A platform for building, running and shipping applications that work the
+  same way everywhere
+- Why software works differently across machines
+- > Files are missing
+- > Software version mismatch
+- > Different configuration settings
+- Docker solves this by packaging everything with its proper version in a
+  packet that can run anywhere
+- no need "setting up" a machine ie downloading a bunch of software just run
+  docker on your command line
+- docker runs software in an isolated environment called a container
+- docker allows better organization of software & applications, reduces errors
+	
+
+Virtual Machines vs Containers
+- A container is an Isolated environment for running an application
+- A virtual machine is an abstraction of a machine (the actual hardware)
+- VM's are "big"
+- > Each VM needs a full-blown operating system
+- > VM's are slow to start bc they are so bulky
+- > VM's are resource intensive; they simulate a whole computer on a fraction
+  of computing power, on another computer already running a computer
+- Containers are light
+- > allow running multiple apps in isolation
+- > Are lightweight; don't have any dependencies besides dockerfile & image
+- > uses the host operating system
+- > starts very quickly (< 1 second !!!)
+- > need less hardware resources (1 kernel!)
+
+
+Architecture of Docker
+- Uses a client server architecture
+- Client (me) communicates to docker engine (server) with a restful API
+- docker engine sits in the background and runs/builds containers
+- containers share the kernal of the host
+- > kernel is a part of the os, like the engine of a car
+- > kernels have apis (!?)
+- containers can simulate code in some os if the host has a kernel of that os
+- bc mac is weird, docker uses a lightweight vm on mac to simulate linux
+
+Installing Docker
+
+Development Workflow
+- take an application and add a docker file so docker can run it
+- a dockerfile is a .txt file with instructions for docker to run
+- the total of the application, its dependencies, and the docker file make up the image
+- tell docker to start a container using the info in that image
+- application is loaded into a container
+- instead of node app.js do docker run app.js
+- docker runs the application inside of a container
+- once an image is made, it can be pushed to a docker registry
+- like writing code with git, then publishing to github
+- this relationship allows anyone who has access to the docker registry to run
+  your code using docker, no matter their machine or operating system
+
